@@ -6,19 +6,20 @@ import Business from "../pages/business";
 import Atms from "../pages/atms";
 import { useState } from "react";
 import "../App.css";
-export default function Header() {
+export default function Header({
+  fontSize,
+  setFontSize,
+  specialStyles,
+  setSpecialStyles,
+  fontSizesRange,
+  languages,
+  language,
+  setLanguage
+}) {
   const [callHover, setCallHover] = useState(
     "https://img.icons8.com/material/24/37363c/phone--v1.png"
   );
-  const fontSizesRange = {
-    minFontSize: 12,
-    defaultFontSize: 14,
-    maxFontSize: 16,
-  };
-  const [fontSize, setFontSize] = useState(fontSizesRange.defaultFontSize);
   const [dropDownHover, setdropDownHover] = useState(false);
-  const [language, setLanguage] = useState("O'zbekcha");
-  const languages = ["O'zbekcha", "Русский"];
   const [activeRoutePadding, setActiveRoutePadding] = useState(20);
   const buttonSvg = {
     on: {
@@ -33,12 +34,6 @@ export default function Header() {
   const [reverseButtonHover, setReverseButtonHover] = useState(false);
   const [specialMenuOn, setSpecialMenuOn] = useState(false);
 
-  const [specialStyles, setSpecialStyles] = useState({
-    simpleVersion: true,
-    nightTheme: false,
-    soundOn: false,
-  });
-
   const reverse = (value, setValue) => {
     setValue(!value);
   };
@@ -48,7 +43,7 @@ export default function Header() {
         style={specialStyles.nightTheme ? { filter: "grayscale(100%)" } : null}
       >
         <div className="header" style={{ fontSize: fontSize }}>
-          <div className="header-top header__row">
+          <div className="header-top">
             <ul className="routes">
               <li className="route">
                 <Link to="/">
@@ -397,6 +392,13 @@ export default function Header() {
                           onClick={() => setLanguage(languages[1])}
                         >
                           <p>{languages[1]}</p>
+                        </div>
+                        
+                        <div
+                          className="dropDown-language"
+                          onClick={() => setLanguage(languages[2])}
+                        >
+                          <p>{languages[2]}</p>
                         </div>
                       </>
                     ) : null}
