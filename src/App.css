@@ -47,7 +47,7 @@ body {
   
 }
 .route {
-  padding: 17px 15px;
+  padding: 15px 15px;
   text-decoration: none;
   top: 2%;
   position: relative;
@@ -197,4 +197,29 @@ body {
 }
 .disabled:hover{
   color: #37363c;
+}
+
+.text-default{
+  text-decoration: none;
+  color: #37363c;
+}
+.text-default:hover{
+  color: #a30041;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+
+.search-button{
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.a-center{
+  align-items: center;
+}
+
+.j-between{
+  justify-content: space-between;
 }

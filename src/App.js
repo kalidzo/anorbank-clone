@@ -7,7 +7,7 @@ function App() {
   const fontSizesRange = {
     minFontSize: 10,
     defaultFontSize: 12,
-    maxFontSize: 16,
+    maxFontSize: 14,
   };
   const [fontSize, setFontSize] = useState(fontSizesRange.defaultFontSize);
   const [specialStyles, setSpecialStyles] = useState({

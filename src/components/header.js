@@ -6,6 +6,7 @@ import Business from "../pages/business";
 import Atms from "../pages/atms";
 import { useState } from "react";
 import "../App.css";
+import HeaderBottom from "./header_bottom";
 export default function Header({
   fontSize,
   setFontSize,
@@ -20,7 +21,7 @@ export default function Header({
     "https://img.icons8.com/material/24/37363c/phone--v1.png"
   );
   const [dropDownHover, setdropDownHover] = useState(false);
-  const [activeRoutePadding, setActiveRoutePadding] = useState(20);
+  const [activeRoutePadding, setActiveRoutePadding] = useState(18);
   const buttonSvg = {
     on: {
       fill: "#a30041",
@@ -409,7 +410,7 @@ export default function Header({
           </div>
           <hr />
         </div>
-
+        <HeaderBottom fontSize={fontSize}/>             
         <Routes>
           <Route path="/" element={<JismoniyShaxslar />}></Route>
           <Route path="/business" element={<Business />}></Route>
@@ -419,5 +420,6 @@ export default function Header({
         </Routes>
       </div>
     </BrowserRouter>
+
   );
 }
